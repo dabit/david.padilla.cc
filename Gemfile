@@ -43,4 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'crowdblog', path: '../crowdblog'
 gem 'devise'
