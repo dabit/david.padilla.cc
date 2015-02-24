@@ -1,0 +1,11 @@
+<%= cache post do %>
+  <div class="post">
+    <div class="title">
+      <h1><%= link_to post.title, main_app.post_path(post.permalink) %></h1>
+    </div>
+    <div class="body">
+      <%= post.html_body %>
+    </div>
+  </div>
+<% end -%>
+
