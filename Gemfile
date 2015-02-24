@@ -43,5 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'bootstrap-sass'
 gem 'crowdblog', path: '../crowdblog'
 gem 'devise'

@@ -257,3 +257,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
+
+Crowdblog.author_user_class_name = "::User"
+Crowdblog.publisher_user_class_name = "::User"
