@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DavidPadillaCc</title>
+  <title>David Padilla: Engineer, Manager, Rubyist, Speaker</title>
+  <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="jumbotron">
+      <h1 id="david-padilla">David Padilla</h1>
+      <p class="lead">Engineer, Manager, Rubyist, Speaker</p>
+    </div>
+  </div>
 
-  <%= yield %>
+  <div class="col-md-8 col-md-offset-2">
+    <%= yield %>
+  </div>
 </div>
 
 </body>
