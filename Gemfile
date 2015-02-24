@@ -44,5 +44,5 @@ group :development, :test do
 end
 
 gem 'bootstrap-sass'
-gem 'crowdblog', path: '../crowdblog'
+gem 'crowdblog', '~> 0.6.0'
 gem 'devise'
