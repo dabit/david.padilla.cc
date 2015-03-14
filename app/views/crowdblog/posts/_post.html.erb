@@ -6,6 +6,9 @@
     <% unless post.cms %>
       <div class="category col-md-10">
         From my thougts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
+      <%- unless singlepost %>
+        - <%= link_to post.title, main_app.post_path(post.permalink) + "#disqus_thread" %>
+      <%- end %>
       </div>
     <% end %>
     <div class="body col-md-11 col-md-offset-1">
@@ -13,4 +16,18 @@
     </div>
   </div>
 <% end -%>
+<%- if singlepost %>
+<div class="comments col-md-11 col-md-offset-1"/>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'david-padilla';
 
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+<% end %>
