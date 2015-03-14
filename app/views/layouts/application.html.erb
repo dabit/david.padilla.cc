@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render partial: 'analytics' %>
-<script type="text/javascript">
+  <%= javascript_tag do %>
     var disqus_shortname = 'david-padilla';
 
     (function () {
@@ -16,7 +16,7 @@
         s.src = '//' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-</script>
+  <% end %>
 </head>
 <body>
 <div class="container">
