@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     as: 'about_me'
 
   resources :posts, only: [:show], controller: 'crowdblog/posts'
+
+  get 'sitemap.(:format)', to: 'sitemap#show'
 end

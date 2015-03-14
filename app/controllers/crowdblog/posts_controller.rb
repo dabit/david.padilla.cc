@@ -1,6 +1,6 @@
 class Crowdblog::PostsController < ApplicationController
   def index
-    @posts = Crowdblog::Post.published.where(cms: false).order("published_at DESC")
+    @posts = Crowdblog::Post.published_and_ordered.where(cms: false)
   end
 
   def show
