@@ -16,7 +16,7 @@
     </div>
   </div>
 <% end -%>
-<%- if singlepost %>
+<%- if !post.cms && singlepost %>
 <div class="comments col-md-11 col-md-offset-1"/>
   <div id="disqus_thread"></div>
   <script type="text/javascript">
