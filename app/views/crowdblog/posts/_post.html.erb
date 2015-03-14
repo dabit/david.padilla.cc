@@ -1,9 +1,14 @@
 <%= cache post do %>
-  <div class="post">
-    <div class="title">
+  <div class="post row">
+    <div class="title col-md-10">
       <h1><%= link_to post.title, main_app.post_path(post.permalink) %></h1>
     </div>
-    <div class="body">
+    <% unless post.cms %>
+      <div class="category col-md-10">
+        From my thougts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
+      </div>
+    <% end %>
+    <div class="body col-md-11 col-md-offset-1">
       <%= post.html_body %>
     </div>
   </div>
