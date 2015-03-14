@@ -1,23 +1,21 @@
-<%= cache post do %>
-  <article class="post row">
-    <header>
-      <div class="title col-md-10">
-        <h1><%= link_to post.title, main_app.post_path(post.permalink) %></h1>
-      </div>
-      <% unless post.cms %>
-        <div class="category col-md-10">
-          From my thoughts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
-        <%- unless singlepost %>
-          - <%= link_to "0 Comments", main_app.post_path(post.permalink) + "#disqus_thread" %>
-        <%- end %>
-        </div>
-      <% end %>
-    </header>
-    <div class="body col-md-11 col-md-offset-1">
-      <%= post.html_body %>
+<article class="post row">
+  <header>
+    <div class="title col-md-10">
+      <h1><%= link_to post.title, main_app.post_path(post.permalink) %></h1>
     </div>
-  </article>
-<% end -%>
+    <% unless post.cms %>
+      <div class="category col-md-10">
+        From my thoughts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
+      <%- unless singlepost %>
+        - <%= link_to "0 Comments", main_app.post_path(post.permalink) + "#disqus_thread" %>
+      <%- end %>
+      </div>
+    <% end %>
+  </header>
+  <div class="body col-md-11 col-md-offset-1">
+    <%= post.html_body %>
+  </div>
+</article>
 <%- if !post.cms && singlepost %>
 <div class="comments col-md-11 col-md-offset-1"/>
   <div id="disqus_thread"></div>
