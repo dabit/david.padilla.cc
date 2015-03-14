@@ -5,7 +5,7 @@
     </div>
     <% unless post.cms %>
       <div class="category col-md-10">
-        From my thougts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
+        From my thoughts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
       <%- unless singlepost %>
         - <%= link_to "0 Comments", main_app.post_path(post.permalink) + "#disqus_thread" %>
       <%- end %>
