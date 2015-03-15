@@ -29,22 +29,24 @@
 </head>
 <body>
 <div class="container">
-  <div class="col-xs-9 col-md-10 col-md-offset-1">
-    <h1 class="visible-xs">David Padilla</h1>
-    <div id="navigation">
-      <%= link_to "Home", crowdblog.root_path %>
-      |
-      <%= link_to "Archive", "#" %>
-      |
-      <%= link_to "About", main_app.about_me_path %>
+  <div class="row">
+    <div class="col-xs-9 col-md-10 col-md-offset-1">
+      <h1 class="visible-xs">David Padilla</h1>
+      <div id="navigation">
+        <%= link_to "Home", crowdblog.root_path %>
+        |
+        <%= link_to "Archive", "#" %>
+        |
+        <%= link_to "About", main_app.about_me_path %>
+      </div>
     </div>
-    <div class="jumbotron visible-md">
-      <h1 id="david-padilla">David Padilla</h1>
-      <p class="lead">Engineer, Manager, Rubyist, Speaker</p>
+    <div class="col-xs-3 avatar visible-xs">
+      <%= image_tag "avatar.jpg", width: 60 %>
     </div>
   </div>
-  <div class="col-xs-3 avatar visible-xs">
-    <%= image_tag "avatar.jpg", width: 60 %>
+  <div class="jumbotron hidden-xs">
+    <h1 id="david-padilla">David Padilla</h1>
+    <p class="lead">Engineer, Manager, Rubyist, Speaker</p>
   </div>
 
   <div class="col-md-10 col-md-offset-1">
