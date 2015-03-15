@@ -1,6 +1,12 @@
+.avatar {
+  padding-top: 20px;
+}
+
 #navigation {
-  text-align: right;
-  padding: 5px 0 5px 0;
+  @media (min-width: 768px) {
+    text-align: right;
+    padding: 5px 0 5px 0;
+  }
 }
 
 .jumbotron {
@@ -30,6 +36,14 @@ p {
 
 h1, h2, h3 {
   color: #999;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+@media (min-width: 768px) {
+  font-size: 36px;
 }
 
 a {
