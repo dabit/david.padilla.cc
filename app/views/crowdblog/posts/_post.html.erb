@@ -1,7 +1,7 @@
 <article class="post row">
   <header>
     <div class="title col-md-10">
-      <h1><%= link_to post.title, main_app.post_path(post.permalink) %></h1>
+      <h1><%= link_to post.title, main_app.post_path(post) %></h1>
     </div>
     <% unless post.cms %>
       <div class="category col-md-10">
@@ -15,19 +15,19 @@
   <div class="body col-md-11 col-md-offset-1">
     <%= post.html_body %>
   </div>
-</article>
-<%- if !post.cms && singlepost %>
-<div class="comments col-md-11 col-md-offset-1"/>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      var disqus_shortname = 'david-padilla';
+  <%- if !post.cms && singlepost %>
+  <div class="comments col-md-11 col-md-offset-1"/>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'david-padilla';
 
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-</div>
-<% end %>
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+  <% end %>
+</article>

@@ -1,9 +1,10 @@
 class Crowdblog::PostsController < ApplicationController
   def index
-    @posts = Crowdblog::Post.published_and_ordered.where(cms: false)
+    @posts = ::Post.published_and_ordered.where(cms: false).limit(6)
+    @featured_post = @posts.to_a.shift
   end
 
   def show
-    @post = Crowdblog::Post.where(permalink: params[:id]).first
+    @post = ::Post.where(id: params[:id]).first || ::Post.where(permalink: params[:id]).first
   end
 end
