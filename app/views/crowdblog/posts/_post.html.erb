@@ -5,7 +5,7 @@
     </div>
     <% unless post.cms %>
       <div class="category col-md-10">
-        From my thoughts on <%= post.category.try(:name) %> - <%= post.published_at.strftime("%B %e, %Y") %>
+        From my thoughts on <%= post.category.try(:name) %> - <%= post.published? ? post.published_at.strftime("%B %e, %Y") : Time.now.strftime("%B %e, %Y") %>
       <%- unless singlepost %>
         - <%= link_to "0 Comments", main_app.post_path(post.permalink) + "#disqus_thread" %>
       <%- end %>
@@ -15,7 +15,7 @@
   <div class="body col-md-11 col-md-offset-1">
     <%= post.html_body %>
   </div>
-  <%- if !post.cms && singlepost %>
+  <%- if post.published? && !post.cms && singlepost %>
   <div class="comments col-md-11 col-md-offset-1"/>
     <div id="disqus_thread"></div>
     <script type="text/javascript">

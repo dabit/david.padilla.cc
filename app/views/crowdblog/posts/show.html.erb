@@ -1,3 +1,3 @@
 <%= cache(@post) do %>
-  <%= render @post, { singlepost: true } %>
+  <%= render partial: 'crowdblog/posts/post', object: @post, locals: { singlepost: true } %>
 <% end %>
