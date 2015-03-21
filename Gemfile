@@ -46,11 +46,14 @@ group :development, :test do
 end
 
 gem 'bootstrap-sass'
+gem 'capistrano', '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-rvm'
+gem 'capistrano-passenger'
 gem 'crowdblog', '~> 0.6.0'
 gem 'devise'
 
 group :production do
   gem 'pg'
-  gem 'puma'
-  gem 'rails_12factor'
+  gem 'passenger'
 end
