@@ -1,5 +1,1 @@
 = render @featured_post, { singlepost: false }
-
-- unless @posts.empty?
-  h1 More stuff to read:
-  ul= render partial: 'post_list', collection: @posts
