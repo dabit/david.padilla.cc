@@ -1,7 +1,8 @@
 class Crowdblog::PostsController < ApplicationController
   def index
-    @post = Post.published_and_ordered.where(cms: false).limit(1).first
-    redirect_to main_app.post_path(@post.to_param)
+    @posts = ::Post.published_and_ordered.where(cms: false).limit(6)
+    @post = @posts.to_a.shift
+    @push_state = main_app.post_path(@post)
   end
 
   def show

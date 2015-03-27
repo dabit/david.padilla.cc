@@ -19,6 +19,16 @@
   <%= csrf_meta_tags %>
   <%= render partial: 'analytics' %>
   <%= javascript_tag do %>
+  <% if @push_state %>
+    if (history && history.pushState) {
+      var stateObj = { module: 'blog' }
+      history.pushState(stateObj, "<%= @post.title %>", "<%= @push_state %>");
+    }
+  <% end %>
+
+  <% if @post %>
+    var disqus_identifier = '<%= @post.to_param %>'
+  <% end %>
     var disqus_shortname = 'david-padilla';
 
     (function () {
@@ -41,7 +51,7 @@
     <div class="col-xs-9 col-md-10 col-md-offset-1">
       <h1 class="visible-xs">David Padilla</h1>
       <div id="navigation">
-        <%= link_to "Home", crowdblog.root_path %>
+        <span data-no-turbolink><%= link_to "Home", crowdblog.root_path %></span>
         |
         <%= link_to "Archive", main_app.archive_path %>
         |
