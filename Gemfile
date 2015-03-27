@@ -52,6 +52,7 @@ gem 'capistrano-rvm'
 gem 'capistrano-passenger'
 gem 'crowdblog', '~> 0.6.0'
 gem 'devise'
+gem 'dalli'
 
 group :production do
   gem 'pg'
