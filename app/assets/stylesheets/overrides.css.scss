@@ -7,6 +7,15 @@
     text-align: right;
     padding: 5px 0 5px 0;
   }
+  font-size: 14pt;
+}
+
+.main {
+  background-color: #f5f5f5;
+  padding-bottom: 50px;
+  border-color: #eee;
+  border-width: 3px;
+  border-style: solid;
 }
 
 .jumbotron {
@@ -14,17 +23,28 @@
   color: white;
 }
 
+.header {
+  background-image: image-url('banner.png');
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 63px;
+  }
+}
+
 footer {
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   padding-top: 20px;
 
-  border-color: #ccc;
-  border-style: solid;
-  border-width: 1px 0 0 0;
-  background-color: #eee;
+  background-color: white;
   padding-bottom: 20px;
+  font-size: 14pt;
 }
 
 body {
@@ -67,21 +87,29 @@ a {
     margin-bottom: 20px;
   }
 
-  .body, .more {
-    border-style: solid;
-    border-width: 0 0 10px 0;
-    border-color:  #DB3030;
-    padding-bottom: 100px;
+  .body {
     margin-bottom: 20px;
   }
+}
 
-  .more {
-    padding-bottom: 30px;
-  }
-
-  margin-bottom: 70px;
+.more {
+  border-style: solid;
+  border-color:  #DB3030;
+  border-color: #eee;
+  border-width: 3px;
+  padding-bottom: 30px;
+  background-color: white;
+  margin-bottom: 10px;
 }
 
 a.comment-link {
   font-size: 14pt;
 }
+
+.comments {
+  background-color: white;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 3px;
+}
+

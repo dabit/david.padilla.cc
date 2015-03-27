@@ -15,16 +15,19 @@
   <div class="body col-md-11 col-md-offset-1">
     <%= post.html_body %>
   </div>
-  <% if !post.cms %>
+</article>
+
+<% if !post.cms %>
+  <div class="row">
     <div class="more col-md-11 col-md-offset-1">
       <h1>More stuff to read</h1>
       <ul><%= render partial: 'crowdblog/posts/post_list', collection: @posts %>
     </div>
-  <% end %>
-</article>
-
+  </div>
+<% end %>
 
 <%- if post.published? && !post.cms %>
+<div class="row">
   <div class="comments col-md-11 col-md-offset-1"/>
   <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -38,4 +41,5 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
   </div>
+</div>
 <% end %>

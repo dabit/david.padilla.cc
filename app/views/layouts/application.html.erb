@@ -62,13 +62,17 @@
       <%= image_tag "avatar.jpg", width: 60 %>
     </div>
   </div>
-  <div class="jumbotron hidden-xs">
+  <div class="row header hidden-xs">
+    <div class="col-md-11 col-md-offset-1">
     <h1 id="david-padilla">David Padilla</h1>
     <p class="lead">Engineer, Manager, Rubyist, Speaker</p>
+    </div>
   </div>
 
-  <div class="col-md-10 col-md-offset-1">
-    <%= yield %>
+  <div class="row main">
+    <div class="col-md-10 col-md-offset-1">
+      <%= yield %>
+    </div>
   </div>
 
   <footer class="col-md-12">
