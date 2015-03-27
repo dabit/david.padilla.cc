@@ -3,6 +3,8 @@ class Post < Crowdblog::Post
 
   delegate :name, to: :category, prefix: true
 
+  scope :about_me, -> { where(cms: true, permalink: 'about-me') }
+
   def to_param
     "#{id}-#{permalink}"
   end

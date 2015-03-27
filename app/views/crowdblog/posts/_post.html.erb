@@ -1,7 +1,7 @@
 <article class="post row">
   <header>
     <div class="title col-md-10">
-      <h1><%= link_to post.title, main_app.post_path(post) %></h1>
+      <h1><%= post.title %></h1>
     </div>
     <% unless post.cms %>
       <div class="category col-md-10">
@@ -17,7 +17,7 @@
   </div>
   <div class="more col-md-11 col-md-offset-1">
     <h1>More stuff to read</h1>
-    <ul><%= render partial: 'post_list', collection: @posts %>
+    <ul><%= render partial: 'crowdblog/posts/post_list', collection: @posts %>
   </div>
 </article>
 
