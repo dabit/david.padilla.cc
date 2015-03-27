@@ -53,7 +53,6 @@ gem 'capistrano-passenger'
 gem 'crowdblog', '~> 0.6.0'
 gem 'devise'
 gem 'dalli'
-gem 'mini_magick'
 
 group :production do
   gem 'pg'
