@@ -15,10 +15,12 @@
   <div class="body col-md-11 col-md-offset-1">
     <%= post.html_body %>
   </div>
-  <div class="more col-md-11 col-md-offset-1">
-    <h1>More stuff to read</h1>
-    <ul><%= render partial: 'crowdblog/posts/post_list', collection: @posts %>
-  </div>
+  <% if !post.cms %>
+    <div class="more col-md-11 col-md-offset-1">
+      <h1>More stuff to read</h1>
+      <ul><%= render partial: 'crowdblog/posts/post_list', collection: @posts %>
+    </div>
+  <% end %>
 </article>
 
 
