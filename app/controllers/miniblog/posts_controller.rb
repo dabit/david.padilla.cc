@@ -1,4 +1,4 @@
-class Crowdblog::PostsController < ApplicationController
+class Miniblog::PostsController < ApplicationController
   before_filter :set_cache_control_headers
 
   def index

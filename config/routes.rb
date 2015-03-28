@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'archive/index'
 
   devise_for :users
-  mount Crowdblog::Engine => '/'
+  mount Miniblog::Engine => '/'
 
   get '/about-me', to: 'cms#show', defaults: { id: 'about-me' },
     as: 'about_me'

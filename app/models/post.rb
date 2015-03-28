@@ -1,4 +1,4 @@
-class Post < Crowdblog::Post
+class Post < Miniblog::Post
   belongs_to :category
 
   delegate :name, to: :category, prefix: true

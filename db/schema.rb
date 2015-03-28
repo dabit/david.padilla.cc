@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314191244) do
+ActiveRecord::Schema.define(version: 20150328202200) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -26,7 +26,15 @@ ActiveRecord::Schema.define(version: 20150314191244) do
     t.datetime "updated_at"
   end
 
-  create_table "crowdblog_posts", force: :cascade do |t|
+  create_table "crowdblog_status_change_records", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "miniblog_posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.string   "permalink"
@@ -40,14 +48,6 @@ ActiveRecord::Schema.define(version: 20150314191244) do
     t.datetime "updated_at"
     t.boolean  "cms",                  default: false
     t.integer  "category_id"
-  end
-
-  create_table "crowdblog_status_change_records", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.string   "state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|

@@ -258,5 +258,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
 
-Crowdblog.author_user_class_name = "::User"
-Crowdblog.publisher_user_class_name = "::User"
+Miniblog.author_user_class_name = "::User"
+Miniblog.publisher_user_class_name = "::User"

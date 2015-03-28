@@ -1,4 +1,4 @@
-class Crowdblog::Admin::TransitionsController < Crowdblog::Admin::BaseController
+class Miniblog::Admin::TransitionsController < Miniblog::Admin::BaseController
   respond_to :json
   before_filter :load_post, only: [:create]
 
@@ -15,6 +15,6 @@ class Crowdblog::Admin::TransitionsController < Crowdblog::Admin::BaseController
 
   def load_post
     post  = ::Post.scoped_for(current_user).find(params[:id])
-    @post = Crowdblog::PostPresenter.new(post, current_user)
+    @post = Miniblog::PostPresenter.new(post, current_user)
   end
 end

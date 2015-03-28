@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  include Crowdblog::User
+  include Miniblog::User
 end

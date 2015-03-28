@@ -29,8 +29,3 @@
   .span7#assets
     - f.object.assets.each do |asset|
       .asset= "![image alt](#{asset.attachment_url})"
-
-coffee:
-  $ ->
-    new Crowdblog.Views.PostFormView
-

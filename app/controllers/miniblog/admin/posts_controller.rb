@@ -1,4 +1,4 @@
-class Crowdblog::Admin::PostsController < Crowdblog::Admin::BaseController
+class Miniblog::Admin::PostsController < Miniblog::Admin::BaseController
   respond_to :html, :json
 
   before_filter :load_post, :only => [ :edit, :update, :destroy ]
