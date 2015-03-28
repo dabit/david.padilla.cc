@@ -5,7 +5,7 @@ class Crowdblog::PostsController < ApplicationController
     @posts = ::Post.published_and_ordered.where(cms: false).limit(6)
     @post = @posts.to_a.shift
     @push_state = main_app.post_path(@post)
-    set_surrogate_key_header 'posts', @post.record_key
+    set_surrogate_key_header Post.table_key
   end
 
   def show
