@@ -5,11 +5,13 @@ class Crowdblog::PostsController < ApplicationController
     @posts = ::Post.published_and_ordered.where(cms: false).limit(6)
     @post = @posts.to_a.shift
     @push_state = main_app.post_path(@post)
+    set_surrogate_key_header 'posts', @post.record_key
   end
 
   def show
     @post = ::Post.where(id: params[:id]).where(cms: false).first || ::Post.where(permalink: params[:id]).where(cms: false).first
     if @post
+      set_surrogate_key_header @post.record_key
       @posts = []
       @posts << Post.published_and_ordered.where(cms: false).where("published_at < ?", @post.published_at).limit(2)
       @posts << Post.published_and_ordered.where(cms: false).where("published_at > ?", @post.published_at).limit(2)
