@@ -1,4 +1,6 @@
 class Crowdblog::PostsController < ApplicationController
+  before_filter :set_cache_control_headers
+
   def index
     @posts = ::Post.published_and_ordered.where(cms: false).limit(6)
     @post = @posts.to_a.shift
