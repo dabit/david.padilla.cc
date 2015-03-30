@@ -1,4 +1,4 @@
-class Post < Miniblog::Post
+Miniblog::Post.class_eval do
   belongs_to :category
 
   delegate :name, to: :category, prefix: true
@@ -19,3 +19,4 @@ class Post < Miniblog::Post
     end
   end
 end
+
