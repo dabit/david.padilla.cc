@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get '/about-me', to: 'cms#show', defaults: { id: 'about-me' },
     as: 'about_me'
 
-  resources :posts, only: [:show], controller: 'miniblog/posts'
-
   get '/archive', to: 'archive#index'
 
   get 'sitemap.(:format)', to: 'sitemap#show'

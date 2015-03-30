@@ -4,7 +4,7 @@ class Miniblog::PostsController < ApplicationController
   def index
     @posts = Miniblog::Post.published_and_ordered.where(cms: false).limit(6)
     @post = @posts.to_a.shift
-    @push_state = main_app.post_path(@post)
+    @push_state = miniblog.post_path(@post)
     set_surrogate_key_header Miniblog::Post.table_key
   end
 

@@ -7,7 +7,7 @@
       <div class="category col-md-10">
         From my thoughts on <%= post.category.try(:name) %> - <%= post.published? ? post.published_at.strftime("%B %e, %Y") : Time.now.strftime("%B %e, %Y") %>
       <%- unless singlepost %>
-        - <%= link_to "0 Comments", main_app.post_path(post.permalink) + "#disqus_thread" %>
+        - <%= link_to "0 Comments", miniblog.post_path(post.permalink) + "#disqus_thread" %>
       <%- end %>
       </div>
     <% end %>
