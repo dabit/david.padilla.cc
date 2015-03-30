@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     as: 'about_me'
 
   resources :posts, only: [:show], controller: 'miniblog/posts'
-  resources :previews, only: [:show]
 
   get '/archive', to: 'archive#index'
 
