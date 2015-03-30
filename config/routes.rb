@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/about-me', to: 'cms#show', defaults: { id: 'about-me' },
     as: 'about_me'
 
-  resources :posts, only: [:show], controller: 'crowdblog/posts'
+  resources :posts, only: [:show], controller: 'miniblog/posts'
   resources :previews, only: [:show]
 
   get '/archive', to: 'archive#index'

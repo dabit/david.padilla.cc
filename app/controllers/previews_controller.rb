@@ -3,6 +3,6 @@ class PreviewsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    render template: '/crowdblog/posts/show'
+    render template: '/miniblog/posts/show'
   end
 end
