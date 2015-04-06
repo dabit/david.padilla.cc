@@ -36,6 +36,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :assets_roles, [:app]
 set :conditionally_migrate, true           # Defaults to false. If true, it's skip migration if files in db/migrate not modified
 
+set :rvm_ruby_version, '2.2.1'
+
 namespace :deploy do
 
   after :restart, :clear_cache do
