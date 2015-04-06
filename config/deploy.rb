@@ -40,3 +40,9 @@ set :rvm_ruby_version, '2.2.1'
 
 set :passenger_restart_options, -> { "#{deploy_to}" }
 set :passenger_restart_with_sudo, true
+
+after :restart do
+  within release_path do
+    execute :rake, 'fastly:flush'
+  end
+end
