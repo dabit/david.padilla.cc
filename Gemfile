@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.5"
+ruby "2.2.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -53,7 +53,7 @@ gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano-rvm'
 gem 'capistrano-passenger'
 #gem 'miniblog', path: '../miniblog'
-gem 'miniblog', '~> 1.0.0'
+gem 'miniblog', '~> 1.0.2'
 gem 'devise'
 gem 'dalli'
 gem 'fastly-rails'
@@ -62,4 +62,6 @@ gem 'mini_magick'
 
 group :production do
   gem 'pg'
+  gem "fog"
+  gem "fog-aws"
 end
