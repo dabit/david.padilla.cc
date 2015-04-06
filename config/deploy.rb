@@ -38,15 +38,5 @@ set :conditionally_migrate, true           # Defaults to false. If true, it's sk
 
 set :rvm_ruby_version, '2.2.1'
 
-namespace :deploy do
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
-end
+set :passenger_restart_options, -> { "#{deploy_to}" }
+set :passenger_restart_with_sudo, true
