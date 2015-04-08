@@ -1,3 +1,1 @@
-<%= cache(@post) do %>
-  <%= render partial: 'miniblog/posts/post', object: @post, locals: { singlepost: true } %>
-<% end %>
+<%= render partial: 'miniblog/posts/post', object: @post, locals: { singlepost: true } %>
