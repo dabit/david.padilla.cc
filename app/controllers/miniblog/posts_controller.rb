@@ -12,10 +12,8 @@ class Miniblog::PostsController < ApplicationController
     @post = Miniblog::Post.where(id: params[:id]).where(cms: false).first || ::Post.where(permalink: params[:id]).where(cms: false).first
     if @post
       set_surrogate_key_header @post.record_key
-      @posts = []
-      @posts << Miniblog::Post.published_and_ordered.where(cms: false).where("published_at < ?", @post.published_at).limit(2)
-      @posts << Miniblog::Post.published_and_ordered.where(cms: false).where("published_at > ?", @post.published_at).limit(2)
-      @posts = @posts.select { |p| !p.nil? }.flatten
+      @posts = Miniblog::Post.published_and_ordered.where(cms: false).
+          where.not(id: @post.id).limit(5).order("RANDOM()")
     else
       render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
     end
