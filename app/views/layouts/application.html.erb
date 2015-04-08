@@ -48,21 +48,7 @@
 </head>
 <body data-no-turbolink>
 <div class="container">
-  <div class="row">
-    <div class="col-xs-9 col-sm-10 col-sm-offset-2">
-      <h1 class="visible-xs">David Padilla</h1>
-      <div id="navigation">
-        <%= link_to "Home", miniblog.root_path %>
-        |
-        <%= link_to "Archive", main_app.archive_path %>
-        |
-        <%= link_to "About", main_app.about_me_path %>
-      </div>
-    </div>
-    <div class="col-xs-3 avatar visible-xs">
-      <%= image_tag "avatar.jpg", width: 60 %>
-    </div>
-  </div>
+  <%= render 'navigation' %>
   <div class="row header hidden-xs">
     <div class="col-md-11 col-md-offset-1">
     <h1 id="david-padilla">David Padilla</h1>
