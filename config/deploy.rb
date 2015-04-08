@@ -41,6 +41,7 @@ set :rvm_ruby_version, '2.2.1'
 set :passenger_restart_options, -> { "#{deploy_to}" }
 set :passenger_restart_with_sudo, true
 
+desc "Flush Fastly caches"
 task 'fastly:flush' do
   on roles(:app) do
     within release_path do
