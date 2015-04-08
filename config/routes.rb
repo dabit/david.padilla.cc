@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get '/archive', to: 'archive#index'
 
   get 'sitemap.(:format)', to: 'sitemap#show'
+  get 'atom.(:format)', to: 'feeds#show', as: 'atom_feed'
 end
