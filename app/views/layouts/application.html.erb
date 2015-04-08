@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
   <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/dabpadilla.rss" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
@@ -49,10 +49,10 @@
 <body data-no-turbolink>
 <div class="container">
   <div class="row">
-    <div class="col-xs-9 col-md-10 col-md-offset-1">
+    <div class="col-xs-9 col-sm-10 col-sm-offset-2">
       <h1 class="visible-xs">David Padilla</h1>
       <div id="navigation">
-        <span data-no-turbolink><%= link_to "Home", miniblog.root_path %></span>
+        <%= link_to "Home", miniblog.root_path %>
         |
         <%= link_to "Archive", main_app.archive_path %>
         |
