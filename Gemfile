@@ -62,6 +62,6 @@ gem 'mini_magick'
 
 group :production do
   gem 'pg'
-  gem "fog"
-  gem "fog-aws"
+  gem 'fog'
+  gem 'fog-aws'
 end
