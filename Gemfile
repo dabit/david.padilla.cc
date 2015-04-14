@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.1"
+ruby "2.2.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -51,7 +51,7 @@ gem 'bootstrap-sass'
 gem 'capistrano', '~> 3.1'
 gem 'capistrano-rails', '~> 1.1'
 gem 'capistrano-rvm'
-gem 'capistrano-passenger'
+gem 'capistrano-passenger', '~> 0.0.5'
 #gem 'miniblog', path: '../miniblog'
 gem 'miniblog', '~> 1.0.2'
 gem 'devise'
