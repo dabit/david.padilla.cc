@@ -12,3 +12,6 @@ Allow: /archive
 
 User-agent: *
 Allow: /about-me
+
+User-agent: *
+Allow: /sitemap.xml
