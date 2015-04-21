@@ -15,3 +15,6 @@ Allow: /about-me
 
 User-agent: *
 Allow: /sitemap.xml
+
+User-agent: *
+Allow: /assets
