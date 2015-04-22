@@ -2,9 +2,6 @@ User-agent: *
 Disallow: /
 
 User-agent: *
-Allow: /$
-
-User-agent: *
 Allow: /posts
 
 User-agent: *
