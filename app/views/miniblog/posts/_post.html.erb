@@ -15,13 +15,15 @@
   </div>
 </article>
 
-<% if !post.cms %>
-  <div class="row">
-    <div class="more col-md-11 col-md-offset-1">
-      <h1>More stuff to read</h1>
-      <ul><%= render partial: 'miniblog/posts/post_list', collection: @posts %>
+<% cache(@post) do %>
+  <% if !post.cms %>
+    <div class="row">
+      <div class="more col-md-11 col-md-offset-1">
+        <h1>More stuff to read</h1>
+        <ul><%= render partial: 'miniblog/posts/post_list', collection: @posts %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
 <%- if post.published? && !post.cms %>
